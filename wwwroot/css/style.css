@@ -106,7 +106,7 @@ ul{
 
 .champion{
     position: absolute;
-    right: 15%;
+    right: 2%;
     top: 450px;
 }
 
@@ -354,6 +354,13 @@ table td, table th{
 
 table img{
     max-width: 50px;
+}
+
+table a 
+{
+    color : var(--pink);
+    text-decoration: none;
+
 }
 
 @media screen and (max-width: 1200px){

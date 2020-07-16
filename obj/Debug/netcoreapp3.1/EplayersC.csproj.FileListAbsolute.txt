@@ -21,7 +21,6 @@ C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\EplayersC.TagHelpers.
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\EplayersC.RazorCoreGenerate.cache
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Noticias\Index.cshtml.g.cs
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\maheu\Documents\EplayersC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs

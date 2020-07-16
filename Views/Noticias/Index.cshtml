@@ -3,25 +3,38 @@
     ViewData["Title"] = "Noticias";
 }
 
-<form action="@Url.Action("Publicar")" method="post" enctype="multipart/form-data">
+ <div class="titulo_pagina">
+            <h1>cadastro de @ViewData["Title"]</h1>
+        </div>
 
-    <label for="IdNoticia">IdNoticia</label>
-    <input type="text" name="IdNoticia" id="IdNoticia">
-    
-    <label for="Titulo">Titulo</label>
-    <input type="text" name="Titulo" id="Titulo">
-    
-    <label for="Texto">Texto</label>
-    <input type="text" name="Texto" id="Texto">
+<form class="cadastro" action="@Url.Action("Publicar")" method="post" enctype="multipart/form-data">
 
-    <label for="Imagem">Imagem</label>
-    <input type="file" name="Imagem" id="Imagem">
+    <div class="campo">
+        <label for="IdNoticia">IdNoticia</label>
+        <input type="text" name="IdNoticia" id="IdNoticia">
+    </div>
     
-    <button type="submit">Publicar Noticia</button>
+    <div class="campo">
+        <label for="Titulo">Titulo</label>
+        <input type="text" name="Titulo" id="Titulo">
+    </div>
+    
+    <div class="campo">
+        <label for="Texto">Texto</label>
+        <input type="text" name="Texto" id="Texto">
+    </div>
+    
+    <div class="campo">
+        <label for="Imagem">Imagem</label>
+        <input type="file" name="Imagem" id="Imagem">
+    </div>
+    
+    
+   <button class="gradient btn" type="submit">Cadastrar</button>
 
 </form>
 
-<table class="table table-striped">
+<table >
     <thead>
         <th>Id</th>
         <th>Titulo</th>
@@ -39,7 +52,9 @@
                     <img src="img/Noticias/@item.Imagem" alt="Imagem da noticia @item.Titulo"/>
                 </td>
                 <td>
-                    <a asp-asp-area="" asp-controller="Noticias" asp-action="Excluir" asp-route-id="@item.IdNoticia">Excluir</a>
+                    <a asp-asp-area="" asp-controller="Noticias" asp-action="Excluir" asp-route-id="@item.IdNoticia">
+                        <i class="fa fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         }
