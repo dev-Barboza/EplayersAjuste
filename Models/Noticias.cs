@@ -22,21 +22,21 @@ namespace EplayersC.Models
         /// <summary>
         /// criar Pasta e caminho PATH
         /// </summary>
-        /// <param name="n"></param>
-        public void Create(Noticias n)
+        /// <param name="ne"></param>
+        public void Create(Noticias ne)
         {
-            string[] linhas = {PrepareLine(n)};
+            string[] linhas = {PrepararLinha(ne)};
             File.AppendAllLines(PATH, linhas);
         }
 
         /// <summary>
-        ///  Organizar linha segundo os atributos
+        /// Organizar linha segundo os atributos
         /// </summary>
-        /// <param name="n"></param>
+        /// <param name="ne"></param>
         /// <returns></returns>
-        private string PrepareLine (Noticias x)
+        private string PrepararLinha (Noticias ne)
         {
-            return $"{x.IdNoticia};{x.Titulo};{x.Texto};{x.Imagem}";
+            return $"{ne.IdNoticia};{ne.Titulo};{ne.Texto};{ne.Imagem}";
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace EplayersC.Models
         public void Delete(int IdNoticia)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
-            
+           
             linhas.RemoveAll(a => a.Split(";")[0] == IdNoticia.ToString());
 
             RewriteCSV(PATH, linhas);
@@ -63,13 +63,13 @@ namespace EplayersC.Models
             foreach (var item in linhas)
             {
                 string[] linha = item.Split(";");
-                Noticias report = new Noticias();
-                report.IdNoticia = Int32.Parse(linha[0]);
-                report.Titulo = linha[1];
-                report.Texto = linha[2];
-                report.Imagem = linha[3];
+                Noticias noticia = new Noticias();
+                noticia.IdNoticia = Int32.Parse(linha[0]);
+                noticia.Titulo = linha[1];
+                noticia.Texto = linha[2];
+                noticia.Imagem = linha[3];
 
-                news.Add(report);
+                news.Add(noticia);
             }
             return news;
         }
@@ -77,13 +77,13 @@ namespace EplayersC.Models
         /// <summary>
         /// reescever e atualizar linha
         /// </summary>
-        /// <param name="n"></param>
-        public void Update(Noticias x)
+        /// <param name="ne"></param>
+        public void Update(Noticias ne)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
-           
-            linhas.RemoveAll(a => a.Split(";")[0] == x.IdNoticia.ToString());
-            linhas.Add( PrepareLine(x) );
+            
+            linhas.RemoveAll(a => a.Split(";")[0] == ne.IdNoticia.ToString());
+            linhas.Add( PrepararLinha(ne) );
             RewriteCSV(PATH, linhas);
         }
 

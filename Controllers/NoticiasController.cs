@@ -16,7 +16,7 @@ namespace EplayersC.Controllers
         /// <summary>
         /// ler as noticias a partir de uma bag
         /// </summary>
-        /// <returns>View</returns>
+        /// <returns></returns>
         Noticias noticiasModel = new Noticias();
         public IActionResult Index()
         {
@@ -27,15 +27,16 @@ namespace EplayersC.Controllers
         /// <summary>
         /// Cadastra uma nova noticia
         /// </summary>
-        /// <param name="form">obj</param>
+        /// <param name="form">entarará dados</param>
         /// <returns></returns>
-        public IActionResult Cadastrar(IFormCollection form)
+        public IActionResult Publicar(IFormCollection form)
         {
-            Noticias novaNoticia = new Noticias();
-            novaNoticia.IdNoticia = Int32.Parse( form["IdNoticia"]);
-            novaNoticia.Titulo   = form["Titulo"];
-            novaNoticia.Texto    = form["Texto"];
+            Noticias noticiasN = new Noticias();
+            noticiasN.IdNoticia = Int32.Parse( form["IdNoticia"]);
+            noticiasN.Titulo   = form["Titulo"];
+            noticiasN.Texto    = form["Texto"];
             
+           
             var file    = form.Files[0];
 
             
@@ -56,15 +57,15 @@ namespace EplayersC.Controllers
                     file.CopyTo(stream);  
                 }
                 
-                novaNoticia.Imagem   = file.FileName;
+                noticiasN.Imagem   = file.FileName;
             }
             else
             {
-                novaNoticia.Imagem   = "padrao.png";
+                noticiasN.Imagem   = "padrao.png";
             }
             
 
-            noticiasModel.Create(novaNoticia);
+            noticiasModel.Create(noticiasN);
             return LocalRedirect("~/Noticias");
         }
 
